@@ -47,6 +47,7 @@ func createNewBooking(w http.ResponseWriter, r *http.Request) {
 	var booking Booking
 	json.Unmarshal(reqBody, &booking)
 	db.Create(&booking)
+
 	fmt.Println("Endpoint Hit: Creating New Booking")
 	json.NewEncoder(w).Encode(booking)
 }
